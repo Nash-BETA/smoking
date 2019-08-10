@@ -201,6 +201,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  nokogiri
   puma (~> 3.11)
   rails (~> 5.2.3)
   sass-rails (~> 5.0)
@@ -217,4 +218,4 @@ RUBY VERSION
    ruby 2.5.5p157
 
 BUNDLED WITH
-   2.0.1
+   2.0.2

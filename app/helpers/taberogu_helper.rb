@@ -1,0 +1,2 @@
+module TaberoguHelper
+end

@@ -1,0 +1,7 @@
+<%= 
+    @doc.css("h2").each do |link| 
+    concat simple_format(h(link.text))
+end
+%>
+
+
