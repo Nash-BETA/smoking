@@ -4,6 +4,11 @@ require 'csv'
 
 CSV.open("taberogu.csv", "w") do |csv|
 
+    name = 'name'
+    name_hurigana = 'hurigana'
+    smoking = 'smoking'
+    csv << [name, name_hurigana,smoking]
+
     (14000513..14000514).each do |id|
 
         uri = "https://tabelog.com/kanagawa/A1401/A140105/#{id}"
