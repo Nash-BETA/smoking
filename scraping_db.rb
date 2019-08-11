@@ -1,7 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
 
-
     (14000513..14000514).each do |no|
 
         uri = "https://tabelog.com/kanagawa/A1401/A140105/#{no}"
