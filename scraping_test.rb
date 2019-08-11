@@ -9,4 +9,3 @@ doc = Nokogiri::HTML(open(uri),nil,"utf-8")
 doc.css("h1.entry-title").each do |title|
     puts title.text
 end
-
