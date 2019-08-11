@@ -1,24 +1,37 @@
-# README
+# 概要
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+喫煙可能店舗のみのレストラン紹介ポータルサイト
 
-Things you may want to cover:
+# 目的
+ruby,railsの勉強の為のポータルサイト
+勉強に終わりがないように随時機能は追加して完成はありません。
+「やっていくこと」と「できたこと」をこちらに記載して自分ができるようになったことを記録していきます。
+また、上記記載の通り完成はありませんので「やっていくこと」は常に増えていきます。
 
-* Ruby version
+（出来るだけ、issueを作成しそれに関するmergeはコメントにURLを記載して置くようにする）
 
-* System dependencies
+# やっていくこと
 
-* Configuration
+* お店のDBの作成
 
-* Database creation
+* 会員登録
 
-* Database initialization
+* 会員専用のコンテンツ
 
-* How to run the test suite
+* お店の詳細ページ作成
 
-* Services (job queues, cache servers, search engines, etc.)
+* 都道府県のDB作成
 
-* Deployment instructions
+* 都道府県ページの作成（一覧にする）
 
-* ...
+* GCPを利用してサイトを公開する
+
+* etc...
+
+# できたこと
+
+* クローリング
+* 
+* 
+* 
+
