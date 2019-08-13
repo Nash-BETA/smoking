@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 
 
-uri = "https://tabelog.com/kanagawa/A1401/A140105/14000514/"
+uri = "https://tabelog.com/kanagawa/A1401/A140105/14000518/"
 doc = Nokogiri::HTML(open(uri),nil,"utf-8")
 
 

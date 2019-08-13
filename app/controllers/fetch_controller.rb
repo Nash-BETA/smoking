@@ -12,13 +12,12 @@ class FetchController < ApplicationController
         name = doc.css("h2.display-name").text
         name_hurigana = doc.css("span.alias").text
         smoking = doc.xpath('//*[@id="contents-rstdata"]/div[2]/table[2]/tbody/tr[4]/td/text()').text
-    
+        insert_feed(name, name_hurigana, smoking)
     end
-
-
+end
     
     private
-    def store_params
+    def insert_feed(name, name_hurigana, smoking)
         store = Store.new(
             :name             => name,
             :name_hurigana    => name_hurigana,
@@ -26,6 +25,3 @@ class FetchController < ApplicationController
             )
         store.save
     end
-end
-
-
