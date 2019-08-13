@@ -12,8 +12,7 @@ class FetchController < ApplicationController
         name = doc.css("h2.display-name").text
         name_hurigana = doc.css("span.alias").text
         smoking = doc.xpath('//*[@id="contents-rstdata"]/div[2]/table[2]/tbody/tr[4]/td/text()').text
-    
-    end
+       
 
 
     
@@ -27,5 +26,4 @@ class FetchController < ApplicationController
         store.save
     end
 end
-
-
+end
