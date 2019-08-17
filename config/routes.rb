@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get 'static/help'
   get 'taberogu/index'
   get ':controller(/:action(/:id(.:format)))'
+  resource :stores
 end
