@@ -33,6 +33,12 @@ ruby,railsの勉強の為のポータルサイト
 * 
 * 
 
-# Qiitaにまとめる
+# Qiitaにまとめるもの
 * クローリング方法
 https://qiita.com/Nash-BETA/items/e9742f71c330e1a5f740
+
+* rubyのバージョンを上げようとしたら最新バージョンが表示されない
+https://qiita.com/Nash-BETA/items/ad514b79421f8460042b
+
+* GitHubでセキュリティ脆弱性のアラートが来てビビりながら対応した話（GemfileとGemfile.locの違い）
+https://qiita.com/Nash-BETA/items/0d4e876cf9460778b985
