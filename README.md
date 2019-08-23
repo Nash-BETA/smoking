@@ -30,18 +30,22 @@ ruby,railsの勉強の為のポータルサイト
 * クローリングデータの自動DB登録
 * お店のDBの作成
 * お店の詳細ページ作成
-* 
+* rubyのバージョンアップ 
 * 
 
 # Qiitaにまとめるもの
 * クローリング方法
+
 https://qiita.com/Nash-BETA/items/e9742f71c330e1a5f740
 
 * rubyのバージョンを上げようとしたら最新バージョンが表示されない
+
 https://qiita.com/Nash-BETA/items/ad514b79421f8460042b
 
 * GitHubでセキュリティ脆弱性のアラートが来てビビりながら対応した話（GemfileとGemfile.locの違い）
+
 https://qiita.com/Nash-BETA/items/0d4e876cf9460778b985
 
 * 開発中のrubyアプリのバージョンアップしようとしたらバージョン変わらなくて大変だった【2.5.5から2.6.3】
+
 https://qiita.com/Nash-BETA/items/4c9e43b7ab12a0b45994
