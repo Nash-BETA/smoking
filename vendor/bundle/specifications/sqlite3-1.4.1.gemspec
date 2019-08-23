@@ -20,10 +20,10 @@ Gem::Specification.new do |s|
   s.licenses = ["BSD-3-Clause".freeze]
   s.rdoc_options = ["--main".freeze, "README.rdoc".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 1.8.7".freeze)
-  s.rubygems_version = "2.7.6.2".freeze
+  s.rubygems_version = "3.0.3".freeze
   s.summary = "This module allows Ruby programs to interface with the SQLite3 database engine (http://www.sqlite.org)".freeze
 
-  s.installed_by_version = "2.7.6.2" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.0.3" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
@@ -35,7 +35,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<mini_portile>.freeze, ["~> 0.6.2"])
       s.add_development_dependency(%q<hoe-bundler>.freeze, ["~> 1.0"])
       s.add_development_dependency(%q<hoe-gemspec>.freeze, ["~> 1.0"])
-      s.add_development_dependency(%q<rdoc>.freeze, ["< 7", ">= 4.0"])
+      s.add_development_dependency(%q<rdoc>.freeze, [">= 4.0", "< 7"])
       s.add_development_dependency(%q<hoe>.freeze, ["~> 3.17"])
     else
       s.add_dependency(%q<minitest>.freeze, ["~> 5.11"])
@@ -44,7 +44,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<mini_portile>.freeze, ["~> 0.6.2"])
       s.add_dependency(%q<hoe-bundler>.freeze, ["~> 1.0"])
       s.add_dependency(%q<hoe-gemspec>.freeze, ["~> 1.0"])
-      s.add_dependency(%q<rdoc>.freeze, ["< 7", ">= 4.0"])
+      s.add_dependency(%q<rdoc>.freeze, [">= 4.0", "< 7"])
       s.add_dependency(%q<hoe>.freeze, ["~> 3.17"])
     end
   else
@@ -54,7 +54,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<mini_portile>.freeze, ["~> 0.6.2"])
     s.add_dependency(%q<hoe-bundler>.freeze, ["~> 1.0"])
     s.add_dependency(%q<hoe-gemspec>.freeze, ["~> 1.0"])
-    s.add_dependency(%q<rdoc>.freeze, ["< 7", ">= 4.0"])
+    s.add_dependency(%q<rdoc>.freeze, [">= 4.0", "< 7"])
     s.add_dependency(%q<hoe>.freeze, ["~> 3.17"])
   end
 end

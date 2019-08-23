@@ -12,12 +12,12 @@ NULLCMD = :
 #### Start of system configuration section. ####
 
 srcdir = .
-topdir = /Users/nns/.rbenv/versions/2.5.5/include/ruby-2.5.0
+topdir = /Users/nns/.rbenv/versions/2.6.3/include/ruby-2.6.0
 hdrdir = $(topdir)
-arch_hdrdir = /Users/nns/.rbenv/versions/2.5.5/include/ruby-2.5.0/x86_64-darwin18
+arch_hdrdir = /Users/nns/.rbenv/versions/2.6.3/include/ruby-2.6.0/x86_64-darwin18
 PATH_SEPARATOR = :
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
-prefix = $(DESTDIR)/Users/nns/.rbenv/versions/2.5.5
+prefix = $(DESTDIR)/Users/nns/.rbenv/versions/2.6.3
 rubysitearchprefix = $(rubylibprefix)/$(sitearch)
 rubyarchprefix = $(rubylibprefix)/$(arch)
 rubylibprefix = $(libdir)/$(RUBY_BASE_NAME)
@@ -31,8 +31,8 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
-sitearchdir = $(DESTDIR)./.gem.20190810-4436-n12k3l
-sitelibdir = $(DESTDIR)./.gem.20190810-4436-n12k3l
+sitearchdir = $(DESTDIR)./.gem.20190823-66821-8ff647
+sitelibdir = $(DESTDIR)./.gem.20190823-66821-8ff647
 sitedir = $(rubylibprefix)/site_ruby
 rubyarchdir = $(rubylibdir)/$(arch)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -63,12 +63,13 @@ bindir = $(exec_prefix)/bin
 archdir = $(rubyarchdir)
 
 
+CC_WRAPPER = 
 CC = clang
 CXX = clang++
 LIBRUBY = $(LIBRUBY_A)
 LIBRUBY_A = lib$(RUBY_SO_NAME)-static.a
 LIBRUBYARG_SHARED = 
-LIBRUBYARG_STATIC = -l$(RUBY_SO_NAME)-static -framework Foundation
+LIBRUBYARG_STATIC = -l$(RUBY_SO_NAME)-static -framework Security -framework Foundation $(MAINLIBS)
 empty =
 OUTFLAG = -o $(empty)
 COUTFLAG = -o $(empty)
@@ -80,14 +81,15 @@ cxxflags = $(optflags) $(debugflags) $(warnflags)
 optflags = -O3
 debugflags = -ggdb3
 warnflags = 
+cppflags = 
 CCDLFLAGS = -fno-common
 CFLAGS   = $(CCDLFLAGS)  -O3 -Wno-error=shorten-64-to-32  -pipe $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
 DEFS     = 
-CPPFLAGS = -DRUBY_EXTCONF_H=\"$(RUBY_EXTCONF_H)\" -I/Users/nns/.rbenv/versions/2.5.5/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags)
+CPPFLAGS = -DRUBY_EXTCONF_H=\"$(RUBY_EXTCONF_H)\" -I/Users/nns/.rbenv/versions/2.6.3/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags)
 CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
-ldflags  = -L. -L/Users/nns/.rbenv/versions/2.5.5/lib  -fstack-protector -L/usr/local/lib
-dldflags = -L/Users/nns/.rbenv/versions/2.5.5/lib  -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress 
+ldflags  = -L. -L/Users/nns/.rbenv/versions/2.6.3/lib  -fstack-protector-strong -L/usr/local/lib
+dldflags = -L/Users/nns/.rbenv/versions/2.6.3/lib  -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress 
 ARCH_FLAG = 
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
 LDSHARED = $(CC) -dynamic -bundle
@@ -96,7 +98,7 @@ AR = libtool -static
 EXEEXT = 
 
 RUBY_INSTALL_NAME = $(RUBY_BASE_NAME)
-RUBY_SO_NAME = ruby.2.5.5
+RUBY_SO_NAME = ruby.2.6
 RUBYW_INSTALL_NAME = 
 RUBY_VERSION_NAME = $(RUBY_BASE_NAME)-$(ruby_version)
 RUBYW_BASE_NAME = rubyw
@@ -104,7 +106,7 @@ RUBY_BASE_NAME = ruby
 
 arch = x86_64-darwin18
 sitearch = $(arch)
-ruby_version = 2.5.0
+ruby_version = 2.6.0
 ruby = $(bindir)/$(RUBY_BASE_NAME)
 RUBY = $(ruby)
 ruby_headers = $(hdrdir)/ruby.h $(hdrdir)/ruby/backward.h $(hdrdir)/ruby/ruby.h $(hdrdir)/ruby/defines.h $(hdrdir)/ruby/missing.h $(hdrdir)/ruby/intern.h $(hdrdir)/ruby/st.h $(hdrdir)/ruby/subst.h $(arch_hdrdir)/ruby/config.h $(RUBY_EXTCONF_H)
@@ -134,7 +136,7 @@ extout =
 extout_prefix = 
 target_prefix = 
 LOCAL_LIBS = 
-LIBS =   -lpthread -ldl -lobjc 
+LIBS =    
 ORIG_SRCS = AbstractMemory.c ArrayType.c Buffer.c Call.c ClosurePool.c DynamicLibrary.c Function.c FunctionInfo.c LastError.c LongDouble.c MappedType.c MemoryPointer.c MethodHandle.c Platform.c Pointer.c Struct.c StructByValue.c StructLayout.c Thread.c Type.c Types.c Variadic.c ffi.c
 SRCS = $(ORIG_SRCS) 
 OBJS = AbstractMemory.o ArrayType.o Buffer.o Call.o ClosurePool.o DynamicLibrary.o Function.o FunctionInfo.o LastError.o LongDouble.o MappedType.o MemoryPointer.o MethodHandle.o Platform.o Pointer.o Struct.o StructByValue.o StructLayout.o Thread.o Type.o Types.o Variadic.o ffi.o

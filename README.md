@@ -42,3 +42,6 @@ https://qiita.com/Nash-BETA/items/ad514b79421f8460042b
 
 * GitHubでセキュリティ脆弱性のアラートが来てビビりながら対応した話（GemfileとGemfile.locの違い）
 https://qiita.com/Nash-BETA/items/0d4e876cf9460778b985
+
+* 開発中のrubyアプリのバージョンアップしようとしたらバージョン変わらなくて大変だった【2.5.5から2.6.3】
+https://qiita.com/Nash-BETA/items/4c9e43b7ab12a0b45994

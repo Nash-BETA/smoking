@@ -1,0 +1,15 @@
+current directory: /Users/nns/Documents/GitHub/smoking/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+/Users/nns/.rbenv/versions/2.6.3/bin/ruby -I /Users/nns/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20190823-66821-1ezytym.rb extconf.rb
+creating Makefile
+
+current directory: /Users/nns/Documents/GitHub/smoking/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/nns/Documents/GitHub/smoking/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/nns/Documents/GitHub/smoking/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20190823-66821-14pdnug/skiptrace/internal
