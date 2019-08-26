@@ -1,6 +1,6 @@
 require 'net/http'
 require 'uri'
-require 'json'
+require 'json' 
 
 def get_json(url)
 
@@ -26,13 +26,4 @@ data = get_json("https://opendata.resas-portal.go.jp/api/v1-rc.1/prefectures")
 data["result"].each do |val|
     puts val["prefCode"]
     puts val["prefName"]
-end
-
-private
-def insert_feed(prefCode, prefName)
-  prefecture = Prefecture.new(
-        :prefCode    => prefCode,
-        :prefName    => prefName,
-        )
-    store.save
 end

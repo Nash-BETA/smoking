@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TaberoguControllerTest < ActionDispatch::IntegrationTest
+class PrefectureTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
