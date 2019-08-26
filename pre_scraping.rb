@@ -27,3 +27,12 @@ data["result"].each do |val|
     puts val["prefCode"]
     puts val["prefName"]
 end
+
+private
+def insert_feed(prefCode, prefName)
+  prefecture = Prefecture.new(
+        :prefCode    => prefCode,
+        :prefName    => prefName,
+        )
+    store.save
+end
