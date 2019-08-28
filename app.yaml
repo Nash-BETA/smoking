@@ -1,5 +1,4 @@
 entrypoint: bundle exec rackup --port $PORT
 env: flex
 runtime: ruby
-includes:
 - secret.yaml
