@@ -16,8 +16,6 @@ ruby,railsの勉強の為のポータルサイト
 
 * 会員専用のコンテンツ
 
-* 都道府県のDB作成
-
 * 都道府県ページの作成（一覧にする）
 
 * etc...
@@ -31,7 +29,7 @@ ruby,railsの勉強の為のポータルサイト
 * rubyのバージョンアップ 
 * GCP（GAE）を利用してサイトを公開する
   https://smoking-794.appspot.com/
-* 
+* 都道府県のDB作成
 
 # Qiitaにまとめるもの
 * クローリング方法
@@ -47,5 +45,9 @@ https://qiita.com/Nash-BETA/items/ad514b79421f8460042b
 https://qiita.com/Nash-BETA/items/0d4e876cf9460778b985
 
 * 開発中のrubyアプリのバージョンアップしようとしたらバージョン変わらなくて大変だった【2.5.5から2.6.3】
+
+https://qiita.com/Nash-BETA/items/4c9e43b7ab12a0b45994
+
+* Ruby on RailsのアプリをGAEでデプロイする方法
 
 https://qiita.com/Nash-BETA/items/4c9e43b7ab12a0b45994
