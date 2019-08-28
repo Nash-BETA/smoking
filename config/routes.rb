@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'static#home'
   get '/about', to: 'static#about'
   get 'static/help'
-  get 'taberogu/index'
+  get '/:prefcode', to: 'prefecture#show'
   get ':controller(/:action(/:id(.:format)))'
- 
+  
 end
