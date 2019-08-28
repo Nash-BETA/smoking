@@ -1,7 +1,7 @@
 class PrefectureController < ApplicationController
 
     def show
-        @prefecture = Prefecture.find(params[:prefcode])
+        @prefectures = Prefecture.find(params[:prefcode])
     end
 
 
