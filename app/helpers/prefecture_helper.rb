@@ -1,0 +1,2 @@
+module PrefectureHelper
+end
