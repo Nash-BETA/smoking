@@ -4,7 +4,8 @@
 <h2>エリアから探す</h2>
 
 <body>
-
-<%= @prefectures[0]['prefname'] %>
+<% @prefectures.slice(0, 47).each do | prefecture | %>
+<%=  link_to prefecture.prefname , "/pref/#{prefecture.prefcode}" %>
+<% end %>
 
 </body>

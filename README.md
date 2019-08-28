@@ -30,6 +30,8 @@ ruby,railsの勉強の為のポータルサイト
 * GCP（GAE）を利用してサイトを公開する
   https://smoking-794.appspot.com/
 * 都道府県のDB作成
+* TOPに都道府県ページへのリンク追加
+* 
 
 # Qiitaにまとめるもの
 * クローリング方法
