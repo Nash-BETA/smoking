@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   get '/static/help',    to: 'static#help'
   get '/pref/:prefcode', to: 'prefecture#show'
   get '/detail/z_:id',   to: 'store#detail'
-  get '/prefecture', to: 'prefecture#index'
-
-#  get ':controller(/:action(/:id(.:format)))'
+  get ':controller(/:action(/:id(.:format)))'
 
 end
