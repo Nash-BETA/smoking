@@ -1,2 +1,11 @@
 <h1><%= @prefectures.prefname %>のお店一覧</h1>
 
+<% @stores.each do |store| %>
+    <% if store.prefecture == @prefectures.prefname %>
+        <h3><%=store.name%><%=store.name_hurigana%></h3>
+        <p><%=store.smoking%></p>
+        <p><%=store.city%></p>
+    <% end %>
+    
+    
+<% end %>
