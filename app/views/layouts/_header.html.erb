@@ -1,10 +1,11 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <nav>
-      <li><%= link_to "Home",  root_path %></li>
+    <p><font size="2" color="white">掲載件数：<%= render 'store/store-count' %></font></p>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home",  root_path %></li>
-      </ul>
+        <%= @stores.count %>
+        </ul>
     </nav>
   </div>
 </header>
