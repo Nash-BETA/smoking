@@ -1,9 +1,11 @@
+
+<body>
 <h1>雲飯｜煙草が吸える飲食店紹介</h1>
 
 
 <h2>エリアから探す</h2>
 
-<body>
+
 <% @prefectures.slice(0, 47).each do | prefecture | %>
 <%=  link_to prefecture.prefname , "/pref/#{prefecture.prefcode}" %>
 <% end %>
