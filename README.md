@@ -18,8 +18,6 @@ ruby,railsの勉強の為のポータルサイト
 
 * 会員登録
 
-* 会員専用のコンテンツ
-
 * お気に入り機能
 
 * etc...
@@ -47,6 +45,10 @@ ruby,railsの勉強の為のポータルサイト
 * クローリング方法
 
 https://qiita.com/Nash-BETA/items/e9742f71c330e1a5f740
+
+* クローリングをCSVダウンロード
+
+https://qiita.com/Nash-BETA/items/fdc2c7b8878d0ffe9aea
 
 * rubyのバージョンを上げようとしたら最新バージョンが表示されない
 
