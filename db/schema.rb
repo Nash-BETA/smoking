@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_29_091622) do
+ActiveRecord::Schema.define(version: 2019_09_08_031756) do
 
   create_table "prefectures", force: :cascade do |t|
     t.integer "prefcode"
@@ -27,6 +27,12 @@ ActiveRecord::Schema.define(version: 2019_08_29_091622) do
     t.datetime "updated_at", null: false
     t.string "prefecture"
     t.string "city"
+    t.string "city_street"
+    t.string "genre"
+    t.string "business_hours"
+    t.string "holiday"
+    t.string "dinner"
+    t.string "lunch"
   end
 
 end
