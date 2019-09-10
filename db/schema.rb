@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_08_031756) do
+ActiveRecord::Schema.define(version: 2019_09_10_143627) do
 
   create_table "prefectures", force: :cascade do |t|
     t.integer "prefcode"
@@ -31,8 +31,10 @@ ActiveRecord::Schema.define(version: 2019_09_08_031756) do
     t.string "genre"
     t.string "business_hours"
     t.string "holiday"
-    t.string "dinner"
-    t.string "lunch"
+    t.integer "lunch_min"
+    t.integer "lunch_max"
+    t.integer "dinner_min"
+    t.integer "dinner_max"
   end
 
 end
