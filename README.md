@@ -66,3 +66,7 @@ https://qiita.com/Nash-BETA/items/4c9e43b7ab12a0b45994
 * Ruby on RailsのアプリをGAEでデプロイする方法
 
 https://qiita.com/Nash-BETA/items/4c9e43b7ab12a0b45994
+
+* DBに絡むを追加する
+
+https://qiita.com/Nash-BETA/items/8dd34684b65f3c29861a

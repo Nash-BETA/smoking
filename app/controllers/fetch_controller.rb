@@ -45,13 +45,13 @@ class FetchController < ApplicationController
             lunch_min           = lunch_min_comma.gsub(/(\d{0,3}),(\d{3})/, '\1\2').to_i
             lunch_max           = lunch_max_comma.gsub(/(\d{0,3}),(\d{3})/, '\1\2').to_i
             #gsubを使用してカンマを決して.to_iで数字に変化
-            insert_feed(nm, name_hurigana, smoking,prefecture,city,city_street,genre,business_hours,holi,dinner,lunch)
+            insert_feed(nm, name_hurigana, smoking,prefecture,city,city_street,genre,business_hours,holi,lunch_min,lunch_max,dinner_min,dinner_max)
         end
     end
 end
     
     private
-    def insert_feed(nm, name_hurigana, smoking,prefecture,city,city_street,genre,business_hours,holi,dinner,lunch)
+    def insert_feed(nm, name_hurigana, smoking,prefecture,city,city_street,genre,business_hours,holi,lunch_min,lunch_max,dinner_min,dinner_max)
         store = Store.new(
             :name             => nm,
             :name_hurigana    => name_hurigana,
@@ -62,8 +62,10 @@ end
             :genre            => genre,
             :business_hours   => business_hours,
             :holiday          => holi,
-            :dinner           => dinner,
-            :lunch            => lunch,
+            :lunch_min            => lunch_min,
+            :lunch_max            => lunch_max,
+            :dinner_min           => dinner_min,
+            :dinner_max           => dinner_max,
             )
         store.save
     end
