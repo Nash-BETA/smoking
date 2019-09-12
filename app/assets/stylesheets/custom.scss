@@ -4,7 +4,7 @@
 /* universal */
 
 body {
-  padding-top: 60px;
+  padding-top: 100px;
 }
 
 section {
@@ -50,8 +50,55 @@ textarea {
   position: relative;
 }
 
-.item_list01_title {
-  padding: 1px 20px;
+
+.item_list01 h3 {
+  position: relative;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  margin: 10px 0 0 0;
+  
+}
+
+
+.item_list01 p{
+  font-size: 1.2rem;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+
+
+
+/* ヘッダー　*/
+.header{
+  position:fixed;
+  background:#ffab27cc;
+  box-shadow:0 2px 8px rgba(30,30,80,.3);
+  top:0;
+  width:100%;
+  padding: 0 10px 0 10px;
+  height: 70px 
+}
+
+.header a{
+  float: left;
+  font-size: 30px;
+  padding-top: 10px;
+}
+
+.header p{
+  float: right;
+  font-size: 22px;
+  padding-top: 20px;
+  padding-right: 20px;
+  margin: 0 0 0 0;
+}
+
+/* 店舗ページの枠　*/
+.detail {
+  border-radius: 8px;
   border: 1px solid #e0e0e0;
+  margin-bottom: 20px;
   position: relative;
 }

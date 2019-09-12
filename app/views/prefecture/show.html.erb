@@ -3,11 +3,9 @@
 <% @stores.each do |store| %>
     <% if store.prefecture == @prefectures.prefname %>
         <div class="item_list01">
-            <div class="item_list01_title">
-                <h3>
-                    <%=link_to store.name , detail_path(store.id) %> 
-                </h3>
-            </div>
+            <h3>
+                <%=link_to store.name , detail_path(store.id) %> 
+            </h3>
             <p><%=store.smoking%></p>
             <p><%=store.city%></p>
         </div>
