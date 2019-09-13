@@ -6,8 +6,15 @@
             <h3>
                 <%=link_to store.name , detail_path(store.id) %> 
             </h3>
-            <p><%=store.smoking%></p>
-            <p><%=store.city%></p>
+            <div class="item_list01_center">
+                <div class="item_list01_center_img">
+                    <%= image_tag('noimage.jpg') %>
+                </div>
+                <div class="item_list01_center_text">
+                    <p><%=store.city_street%></p>
+                    <p><%=store.smoking%></p>
+                </div>
+            </div>
         </div>
     <% end %>
     
