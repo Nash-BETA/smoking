@@ -9,7 +9,12 @@
     <div class="box-title">北海道・東方地方</div>
         <p>
             <% @prefectures.slice(0, 7).each do | prefecture | %>
-            <%=  link_to prefecture.prefname , "/pref/#{prefecture.prefcode}" %>
+                <% p_name = prefecture.prefname %>
+                <% if @stores.find_by(prefecture: [p_name]) == nil %>
+                    <%= prefecture.prefname %>
+                <% else %>
+                    <%=  link_to prefecture.prefname , "/pref/#{prefecture.prefcode}" %>
+                <% end %>
             <% end %>
         </p>
 </div>
@@ -18,7 +23,12 @@
     <div class="box-title">関東地方</div>
         <p>
             <% @prefectures.slice(8, 6).each do | prefecture | %>
-            <%=  link_to prefecture.prefname , "/pref/#{prefecture.prefcode}" %>
+                <% p_name = prefecture.prefname %>
+                <% if @stores.find_by(prefecture: [p_name]) == nil %>
+                    <%= prefecture.prefname %>
+                <% else %>
+                    <%=  link_to prefecture.prefname , "/pref/#{prefecture.prefcode}" %>
+                <% end %>
             <% end %>
         </p>
 </div>
@@ -27,7 +37,12 @@
     <div class="box-title">中部地方</div>
         <p>
             <% @prefectures.slice(14, 9).each do | prefecture | %>
-            <%=  link_to prefecture.prefname , "/pref/#{prefecture.prefcode}" %>
+                <% p_name = prefecture.prefname %>
+                <% if @stores.find_by(prefecture: [p_name]) == nil %>
+                    <%= prefecture.prefname %>
+                <% else %>
+                    <%=  link_to prefecture.prefname , "/pref/#{prefecture.prefcode}" %>
+                <% end %>
             <% end %>
         </p>
 </div>
@@ -36,7 +51,12 @@
     <div class="box-title">近畿地方</div>
         <p>
             <% @prefectures.slice(23, 7).each do | prefecture | %>
-            <%=  link_to prefecture.prefname , "/pref/#{prefecture.prefcode}" %>
+                <% p_name = prefecture.prefname %>
+                <% if @stores.find_by(prefecture: [p_name]) == nil %>
+                    <%= prefecture.prefname %>
+                <% else %>
+                    <%=  link_to prefecture.prefname , "/pref/#{prefecture.prefcode}" %>
+                <% end %>
             <% end %>
         </p>
 </div>
@@ -45,7 +65,12 @@
     <div class="box-title">中国地方</div>
         <p>
             <% @prefectures.slice(30, 5).each do | prefecture | %>
-            <%=  link_to prefecture.prefname , "/pref/#{prefecture.prefcode}" %>
+                <% p_name = prefecture.prefname %>
+                <% if @stores.find_by(prefecture: [p_name]) == nil %>
+                    <%= prefecture.prefname %>
+                <% else %>
+                    <%=  link_to prefecture.prefname , "/pref/#{prefecture.prefcode}" %>
+                <% end %>
             <% end %>
         </p>
 </div>
@@ -54,7 +79,12 @@
     <div class="box-title">四国地方</div>
         <p>
             <% @prefectures.slice(35, 4).each do | prefecture | %>
-            <%=  link_to prefecture.prefname , "/pref/#{prefecture.prefcode}" %>
+                <% p_name = prefecture.prefname %>
+                <% if @stores.find_by(prefecture: [p_name]) == nil %>
+                    <%= prefecture.prefname %>
+                <% else %>
+                    <%=  link_to prefecture.prefname , "/pref/#{prefecture.prefcode}" %>
+                <% end %>
             <% end %>
         </p>
 </div>
@@ -63,7 +93,12 @@
     <div class="box-title">九州・沖縄地方</div>
         <p>
             <% @prefectures.slice(39, 8).each do | prefecture | %>
-            <%=  link_to prefecture.prefname , "/pref/#{prefecture.prefcode}" %>
+                <% p_name = prefecture.prefname %>
+                <% if @stores.find_by(prefecture: [p_name]) == nil %>
+                    <%= prefecture.prefname %>
+                <% else %>
+                    <%=  link_to prefecture.prefname , "/pref/#{prefecture.prefcode}" %>
+                <% end %>
             <% end %>
         </p>
 </div>
