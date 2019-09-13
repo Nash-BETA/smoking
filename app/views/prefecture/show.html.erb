@@ -1,5 +1,7 @@
 <h1><%= @prefectures.prefname %>のお店一覧</h1>
 
+
+
 <% @stores.each do |store| %>
     <% if store.prefecture == @prefectures.prefname %>
         <div class="item_list01">
@@ -11,12 +13,19 @@
                     <%= image_tag('noimage.jpg') %>
                 </div>
                 <div class="item_list01_center_text">
-                    <p><%=store.city_street%></p>
-                    <p><%=store.smoking%></p>
+                    <p>
+                        喫煙：<%= store.smoking%>
+                    </p>
+                    <p>
+                        料理ジャンル：<%= store.genre%>
+                    </p>
+                    <span>
+                        昼<%= store.lunch_min%>〜<%= store.lunch_max%>円 夜<%= store.dinner_min%>〜<%= store.dinner_max%>円
+                    </span>
                 </div>
             </div>
         </div>
     <% end %>
-    
+
     
 <% end %>
