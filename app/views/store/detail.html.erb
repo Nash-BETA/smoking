@@ -1,7 +1,33 @@
-<div class = detail>
-    <h1>
-        <%= @stores.name %>
-        <%= @stores.name_hurigana %>
-    </h1>
-    <p>喫煙：<%= @stores.smoking%></p>
+<div class="detail">
+    <div class="detail_top">
+                <h1>
+                    <%= @stores.name %>
+                    <%= @stores.name_hurigana %>
+                    </h1>
+    </div>
+    <div class="detail_bottom">
+        <div class="detail_bottom_img">
+            <%= image_tag('noimage.jpg') %>
+        </div>
+        <dic class="detail_bottom_table">
+            <table>
+                <tr>
+                <th>店舗名</th>
+                <td><%= @stores.name %><%= @stores.name_hurigana %></td>
+            </tr>
+            <tr>
+                <th>喫煙・分煙</th>
+                <td><%= @stores.smoking %></td>
+            </tr>
+            <tr>
+                <th>営業時間</th>
+                <td><%= @stores.business_hours%></td>
+            </tr>
+            <tr>
+                <th>所在地</th>
+                <td><%= @stores.city_street %></td>
+            </tr>
+            </table>
+        </div>
+    </div>
 </div>
