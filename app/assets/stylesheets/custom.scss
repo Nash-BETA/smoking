@@ -200,3 +200,16 @@ right: 0;
 .detail_bottom_table td{
   font-size: 12px;
 }
+
+
+/* 登録フォーム */
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+
+}
+
+input {
+  height: auto !important;
+}
