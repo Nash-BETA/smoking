@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_10_143627) do
+ActiveRecord::Schema.define(version: 2019_09_15_051454) do
 
   create_table "prefectures", force: :cascade do |t|
     t.integer "prefcode"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 2019_09_10_143627) do
     t.integer "lunch_max"
     t.integer "dinner_min"
     t.integer "dinner_max"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
