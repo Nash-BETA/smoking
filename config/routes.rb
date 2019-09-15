@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'users/new'
   root 'static#home'
   resources :users
+  post '/signup',  to: 'users#create'
+  get 'users/new'
   get '/about',          to: 'static#about'
   get '/static/help',    to: 'static#help'
   get '/pref/:prefcode', to: 'prefecture#show'
