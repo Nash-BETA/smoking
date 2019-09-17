@@ -1,6 +1,12 @@
   <div class="header">
     <a><%= link_to "曇飯(モクメシ)",  root_path %></a>
     <p>掲載件数：<%= Store.count %></font></p>
-    <p><%=link_to "会員登録",  new_user_path %></p>
-    <p><%=link_to "ログイン",  login_path %></p>
-  </div>
+
+    <% if logged_in? %>
+      <%= current_user.name %>
+      <p><%=link_to "ログアウト", logout_path, method: :delete %></p>
+    <% else %>
+      <p><%=link_to "会員登録",  new_user_path %></p>
+      <p><%=link_to "ログイン",  login_path %></p>
+    <% end %>
+    </div>
