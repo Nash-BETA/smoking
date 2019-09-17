@@ -5,7 +5,7 @@ class PrefectureController < ApplicationController
         @stores      = Store.all
 
         @paginations = Store.all.order(created_at: :desc)
-        @paginations = Store.page(params[:page]).per(10)
+        @paginations = Store.page(params[:page]).per(20)
     end
 
 
