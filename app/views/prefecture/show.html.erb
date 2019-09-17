@@ -2,6 +2,9 @@
 
 
 
+<%= @paginations.total_count %>件中<%= @paginations.offset_value + 1 %>
+〜<%= @paginations.offset_value + @paginations.length %>件を表示しています。
+
 <% @stores.each do |store| %>
     <% if store.prefecture == @prefectures.prefname %>
         <div class="item_list01">
@@ -26,6 +29,8 @@
             </div>
         </div>
     <% end %>
-
-    
 <% end %>
+
+
+<%= paginate @paginations %>
+

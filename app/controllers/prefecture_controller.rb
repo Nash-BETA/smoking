@@ -3,6 +3,9 @@ class PrefectureController < ApplicationController
     def show
         @prefectures = Prefecture.find(params[:prefcode])
         @stores      = Store.all
+
+        @paginations = Store.all.order(created_at: :desc)
+        @paginations = Store.page(params[:page]).per(10)
     end
 
 
