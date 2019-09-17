@@ -3,14 +3,14 @@
     require 'open-uri'
     require 'kconv'    
 
-        uri = "https://tabelog.com/kanagawa/A1401/A140105/14000518"
+        uri = "https://tabelog.com/kyoto/A2601/A260101/26032878"
         doc = Nokogiri::HTML(open(uri),nil,"utf-8")
 
         smok = doc.xpath('//*[@id="contents-rstdata"]/div[2]/table[2]/tbody/tr[4]/td/text()').text
         smoking = smok.strip
             #.stripで空白の削除してる
             
-        if smoking == '喫煙' ||  smoking == '分煙'
+        if smoking == '喫煙' ||  smoking == '分煙' ||  smoking == '全面喫煙可'
             name                = doc.css("h2.display-name").text
             nm                  = name.strip
             #.stripで空白の削除してる
@@ -32,17 +32,19 @@
             dinner_min          = dinner_min_comma.gsub(/(\d{0,3}),(\d{3})/, '\1\2').to_i
             dinner_max          = dinner_max_comma.gsub(/(\d{0,3}),(\d{3})/, '\1\2').to_i
             #
-            lunch               = doc.xpath('//*[@id="rstdtl-head"]/div[1]/section/div[2]/div/div/div[2]/dl[1]/dd/div/p[2]/span/a').text
-            lunch_aux01         = lunch.index("￥")
-            lunch_aux02         = lunch.index("～￥")
-            #.indexを使用することで指定した文字の順番を出せる
-            lunch_min_comma     = lunch[lunch_aux01+1,lunch_aux02-1]
-            lunch_max_comma     = lunch[lunch_aux02+2,9]
-            #カンマが付いたままなので数字にできない
-            lunch_min           = lunch_min_comma.gsub(/(\d{0,3}),(\d{3})/, '\1\2').to_i
-            lunch_max           = lunch_max_comma.gsub(/(\d{0,3}),(\d{3})/, '\1\2').to_i
-            #gsubを使用してカンマを決して.to_iで数字に変化
-        end
 
-        puts lunch_min
-        puts lunch_max
+                    lunch               = doc.xpath('//*[@id="rstdtl-head"]/div[1]/section/div[2]/div/div/div[2]/dl[1]/dd/div/p[2]/span/a').text
+                    if lunch != "-"
+                        lunch_aux01         = lunch.index("￥")
+                        lunch_aux02         = lunch.index("～￥")
+                        #.indexを使用することで指定した文字の順番を出せる
+                        lunch_min_comma     = lunch[lunch_aux01+1,lunch_aux02-1]
+                        lunch_max_comma     = lunch[lunch_aux02+2,9]
+                        #カンマが付いたままなので数字にできない
+                        lunch_min           = lunch_min_comma.gsub(/(\d{0,3}),(\d{3})/, '\1\2').to_i
+                        lunch_max           = lunch_max_comma.gsub(/(\d{0,3}),(\d{3})/, '\1\2').to_i
+                        #gsubを使用してカンマを決して.to_iで数字に変化
+            end
+        end
+        puts dinner_min
+        puts lunch
