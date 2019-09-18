@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'users/new'
   get '/about',          to: 'static#about'
   get '/static/help',    to: 'static#help'
-  get '/pref/:prefcode', to: 'prefecture#show'
+  get '/pref/:prefcode', to: 'prefecture#show' ,as: 'pref'
 
   #asでPrefix の設定ができる
   get '/detail/z_:id',   to: 'store#detail', as: 'detail'
