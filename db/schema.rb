@@ -10,13 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_17_085442) do
+ActiveRecord::Schema.define(version: 2019_09_18_100619) do
 
   create_table "prefectures", force: :cascade do |t|
     t.integer "prefcode"
     t.string "prefname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "user_id"
+    t.integer "store_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["store_id"], name: "index_reviews_on_store_id"
+    t.index ["user_id", "store_id"], name: "index_reviews_on_user_id_and_store_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "reviws", force: :cascade do |t|
+    t.text "content"
+    t.integer "user_id"
+    t.integer "store_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["store_id"], name: "index_reviws_on_store_id"
+    t.index ["user_id"], name: "index_reviws_on_user_id"
   end
 
   create_table "stores", force: :cascade do |t|
