@@ -9,12 +9,8 @@ class PrefectureController < ApplicationController
         pref_name_date = Prefecture.find_by(prefcode: "#{pref_code}")
         pref_name      = pref_name_date.prefname
         s_pref_date    = Store.where(prefecture: "#{pref_name}")
-        s_pref_date.each do |s| 
-            if pref_name == s.prefecture
-                @stores      = Store.all
-                @stores       = Store.page(params[:page]).per(5)
-            end
-        end
+                @stores      = Store.where(prefecture: "#{pref_name}")
+
     end
 
 
