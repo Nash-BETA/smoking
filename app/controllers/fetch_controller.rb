@@ -6,7 +6,7 @@ class FetchController < ApplicationController
 
     def index
 
-        (26032878..26032878).each do |id|
+        (26032870..26032910).each do |id|
             begin
             uri = "https://tabelog.com/kyoto/A2601/A260101/#{id}"
                 doc = Nokogiri::HTML(open(uri),nil,"utf-8")

@@ -1,9 +1,19 @@
 class PrefectureController < ApplicationController
 
+
     def show
         @prefectures = Prefecture.find(params[:prefcode])
-        @stores      = Store.all
-        @stores = Store.page(params[:page]).per(5)
+
+
+        pref_code      = pref_path[6,7].to_i
+        pref_name_date = Prefecture.find_by(prefcode: "#{pref_code}")
+        pref_name      = pref_name_date.prefname
+        s_pref_date         = Store.find_by(prefecture: "#{pref_name}")
+        s_pref         = s_pref_date.prefecture
+            if pref_name == s_pref
+                @stores      = Store.all
+                @stores       = Store.page(params[:page]).per(5)
+            end
     end
 
 
