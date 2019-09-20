@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'static#home'
   resources :users
+  resources :reviews
   post '/signup',  to: 'users#create'
   get 'users/new'
   get '/about',          to: 'static#about'
