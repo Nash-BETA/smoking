@@ -31,3 +31,17 @@
         </div>
     </div>
 </div>
+
+<% if logged_in? %>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <%= form_for(@reviews) do |f| %>
+
+                <%= f.text_field :content,class: "text-field"  %>
+                <%= f.hidden_field :user_id ,  value: @users   %>
+                <%= f.hidden_field :store_id , value: @stores.id %>
+                <%= f.submit '投稿', class: "submit-btn" %>
+            <% end %>
+        </div>
+    </div>
+<% end %>
