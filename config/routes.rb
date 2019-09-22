@@ -20,8 +20,7 @@ Rails.application.routes.draw do
   resources :reviews
 
   #SEO施策
-  get '/robots',  to: 'seo#robots'
-  get 'seo/sitemap', to: 'seo#sitemap'
+  get '/sitemap', to: 'sitemaps#index'
 
 
   #コントローラーを動かす。（クローリングでfeetchとprefectureで使用）

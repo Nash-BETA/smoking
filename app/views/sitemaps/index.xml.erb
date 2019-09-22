@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc><%= @domain %></loc>
+    </url>
+    <% @stores.each do |store| %>
+        <url>
+            <loc><%= "#{@domain}/detail/z_#{store.id}" %></loc>
+        </url>
+    <% end %>
+    <% @prefectures.each do |pref| %>
+        <url>
+            <loc><%= "#{@domain}/pref/#{pref.id}" %></loc>
+        </url>
+    <% end %>
+</urlset>

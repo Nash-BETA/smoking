@@ -1,3 +1,2 @@
 User-agent : *
 Sitemap : http://localhost:3000/sitemap.xml
-# まだサーバーアップロード出来ていないので一旦ローカルのURL
