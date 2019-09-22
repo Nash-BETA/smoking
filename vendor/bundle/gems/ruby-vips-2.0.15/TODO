@@ -1,0 +1,44 @@
+# Notes
+
+- support complex constants, eg. 
+
+	Complex(1, 2)
+	=> (1+2i)
+
+# Common operations
+
+- lint 
+
+	bundle exec rake rubocop
+
+- reinstall local copy of gem after a change
+
+	bundle exec rake install
+
+- run test suite
+
+	bundle exec rake 
+
+- version bump
+
+	edit lib/vips/version.rb 
+	edit VERSION
+
+- regenerate autodocs
+
+	cd lib/vips
+	ruby > methods.rb
+	require 'vips'; Vips::generate_yard
+	^D
+
+- regenerate .rubocop_todo.yml
+
+	bundle exec rubocop --auto-gen-config
+
+- regenerate docs
+
+	bundle exec rake yard
+
+- push new gem to rubygems, tag repository with version
+
+	bundle exec rake release
