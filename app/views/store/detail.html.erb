@@ -32,6 +32,12 @@
     </div>
 </div>
 
+
+
+<% @review_display.each do |review| %>
+    <%= review.content %>
+<%end%>
+
 <% if logged_in? %>
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
