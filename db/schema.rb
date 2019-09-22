@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_18_100619) do
+ActiveRecord::Schema.define(version: 2019_09_22_081602) do
 
   create_table "prefectures", force: :cascade do |t|
     t.integer "prefcode"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2019_09_18_100619) do
     t.integer "store_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "img"
+    t.string "image"
     t.index ["store_id"], name: "index_reviews_on_store_id"
     t.index ["user_id", "store_id"], name: "index_reviews_on_user_id_and_store_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
