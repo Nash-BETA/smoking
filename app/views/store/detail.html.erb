@@ -44,6 +44,10 @@
             <%= form_for(@reviews) do |f| %>
 
                 <%= f.text_field :content,class: "text-field"  %>
+                
+                <%= f.label :画像 %><br />
+                <%= f.file_field :img, class: "image"  %>
+
                 <%= f.hidden_field :user_id ,  value: @users   %>
                 <%= f.hidden_field :store_id , value: @stores.id %>
                 <%= f.submit '投稿', class: "submit-btn" %>
