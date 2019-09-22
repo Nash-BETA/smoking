@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'seo/robots'
+  get 'seo/sitemap'
   root 'static#home'
   post '/signup',  to: 'users#create'
   get '/about',          to: 'static#about'
