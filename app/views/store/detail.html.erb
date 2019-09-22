@@ -35,7 +35,10 @@
 
 
 <% @review_display.each do |review| %>
-    <%= review.content %>
+    <%= review.content %>    
+    <% c = review.user_id %>
+    <% c = c.to_i %>
+    <%= @user_review["#{c}".to_i]['name'] %>
 <%end%>
 
 <% if logged_in? %>
