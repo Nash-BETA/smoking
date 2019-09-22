@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   root 'static#home'
   post '/signup',  to: 'users#create'
   get '/about',          to: 'static#about'
@@ -17,6 +18,10 @@ Rails.application.routes.draw do
 
   #口コミまわり
   resources :reviews
+
+  #SEO施策
+  get '/sitemap', to: 'sitemaps#index'
+
 
   #コントローラーを動かす。（クローリングでfeetchとprefectureで使用）
   get ':controller(/:action(/:id(.:format)))'
