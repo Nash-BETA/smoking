@@ -35,10 +35,15 @@
 
 
 <% @review_display.each do |review| %>
-    <%= review.content %>    
-    <% c = review.user_id %>
-    <% c = c.to_i %>
-    <%= @user_review["#{c}".to_i]['name'] %>
+    <div class="review">
+        <div class="review_user">
+            <% c = review.user_id %>
+            <%= @user_review["#{c}".to_i]['name'] %>
+        </div>
+        <div class="review_content">
+            <%= review.content %>
+        </div>
+    </div>
 <%end%>
 
 <% if logged_in? %>

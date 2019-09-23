@@ -201,6 +201,22 @@ right: 0;
   font-size: 12px;
 }
 
+/* 口コミの表示 */
+.review {
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.review_user {
+
+}
+
+.review_content {
+
+}
+
 
 /* 登録フォーム */
 input, textarea, select, .uneditable-input {
