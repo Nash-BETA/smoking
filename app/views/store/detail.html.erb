@@ -32,7 +32,7 @@
     </div>
 </div>
 
-
+<%= image_tag '/uploads/review/image/11/noimage.jpg' %> 
 
 <% @review_display.each do |review| %>
     <div class="review">
@@ -42,8 +42,14 @@
             <%= @user_review["#{c}".to_i]['name'] %>
         </div>
         <div class="review_content">
-            <div class="review_content_text">
-                <p><%= review.content %></p>
+            <div class="review_content">
+                <div class="review_content_text">
+                    <p><%= review.content %></p>
+                </div>
+                <div class="review_content_picture">
+
+                <img src="<%= "#{review.image}" %>">
+                </div>
             </div>
         </div>
     </div>

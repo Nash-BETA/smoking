@@ -247,10 +247,18 @@ right: 0;
   border-right: 12px solid #f3f3f3;
 }
 
-.review_content p {
+
+.review_content_text p{
   margin: 0;
   padding: 0;
 }
+
+.review_content_picture img{
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
 
 /* 登録フォーム */
 input, textarea, select, .uneditable-input {
