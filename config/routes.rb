@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   #口コミまわり
   resources :reviews
 
+
   #SEO施策
   get '/sitemap', to: 'sitemaps#index'
 

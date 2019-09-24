@@ -201,10 +201,68 @@ right: 0;
   font-size: 12px;
 }
 
+/* 口コミの表示 */
+.review {
+  width: 70%;
+  margin: 1.5em 0;
+  overflow: hidden;
+  margin-left: 20%;
+  margin-right: 15%;
+}
+
+.review .review_user {
+  float: left;
+  margin-right: -90px;
+  width: 80px;
+  text-align: center;
+}
+
+.review .review_user img{
+  width: 100%;
+  height: auto;
+  border: solid 3px #f3f3f3;
+  border-radius: 50%;
+}
+
+.review .review_content {
+  width: 70%;
+}
+
+.review_content {
+  display: inline-block;
+  position: relative; 
+  margin: 5px 0 0 105px;
+  padding: 17px 13px;
+  border-radius: 12px;
+  background: #f3f3f3;
+}
+
+.review_content:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 18px; 
+  left: -24px;
+  border: 12px solid transparent;
+  border-right: 12px solid #f3f3f3;
+}
+
+
+.review_content_text p{
+  margin: 0;
+  padding: 0;
+}
+
+.review_content_picture img{
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
 
 /* 登録フォーム */
 input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
+
   width: 100%;
   margin-bottom: 15px;
 
