@@ -39,14 +39,12 @@
             <% c = review.user_id %>
             <%= @user_review["#{c}".to_i]['name'] %>
         </div>
-        <div class="review_content">
             <div class="review_content">
                 <div class="review_content_text">
                     <p><%= review.content %></p>
                 </div>
                 <div class="review_content_picture">
-
-                <img src="<%= "#{review.image}" %>">
+                    <img src="<%= "#{review.image}" %>">
                 </div>
             </div>
         </div>
