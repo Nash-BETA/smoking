@@ -114,7 +114,8 @@ height: 240px;
   top:0;
   width:100%;
   padding: 0 10px 0 10px;
-  height: 70px 
+  height: 70px; 
+  z-index: 100;
 }
 
 .header a{
@@ -218,8 +219,8 @@ right: 0;
 }
 
 .review .review_user img{
-  width: 100%;
-  height: auto;
+  width: 70px;
+  height: 70px;
   border: solid 3px #f3f3f3;
   border-radius: 50%;
 }
@@ -249,14 +250,16 @@ right: 0;
 
 
 .review_content_text p{
+  float: left;
   margin: 0;
   padding: 0;
 }
 
 .review_content_picture img{
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
+  float: right;
+  margin-top: 2px;
+  padding-right: 5px;
+  width: 100px;
 }
 
 
