@@ -3,10 +3,11 @@ class FetchController < ApplicationController
     require 'nokogiri'
     require 'open-uri'
     require 'kconv'    
+    require 'Fileutils'
 
     def index
 
-        (26032870..26032910).each do |id|
+        (26020800..26020800).each do |id|
             begin
             uri = "https://tabelog.com/kyoto/A2601/A260101/#{id}"
                 doc = Nokogiri::HTML(open(uri),nil,"utf-8")
@@ -28,15 +29,46 @@ class FetchController < ApplicationController
                     holiday             = doc.xpath('//*[@id="short-comment"]').text
                     holi                = holiday.strip
                     dinner              = doc.xpath('//*[@id="rstdtl-head"]/div[1]/section/div[2]/div/div/div[2]/dl[1]/dd/div/p[1]/span/a').text
+                    #.indexを使用することで指定した文字の順番を出せる
                     dinner_aux01        = dinner.index("￥")
                     dinner_aux02        = dinner.index("～￥")
-                    #.indexを使用することで指定した文字の順番を出せる
+                    #カンマが付いたままなので数字にできない
                     dinner_min_comma    = dinner[dinner_aux01+1,dinner_aux02-1]
                     dinner_max_comma    = dinner[dinner_aux02+2,9]
-                    #カンマが付いたままなので数字にできない
+                    #gsubを使用してカンマを決して.to_iで数字に変化
                     dinner_min          = dinner_min_comma.gsub(/(\d{0,3}),(\d{3})/, '\1\2').to_i
                     dinner_max          = dinner_max_comma.gsub(/(\d{0,3}),(\d{3})/, '\1\2').to_i
-                    #gsubを使用してカンマを決して.to_iで数字に変化
+
+                    #画像取得用（jsでスライダーを使われていてスクレイピング上手く回らないので、小さい画像のURL取得してURLを加工する）
+                    begin
+                        mini_picture        = doc.xpath('//*[@id="column-main"]/div[1]/div[2]/ul/li[1]/a/img').attribute('src').value
+                    
+                        mini_picture != ""
+                        picture_aux01       = mini_picture.index("e/")
+                        picture_aux02       = mini_picture.index("/restaurant/")
+                        picture_first       = mini_picture[0,picture_aux01+1]
+                        picture_last        = mini_picture[picture_aux02,99]
+                        image_sum           = "#{picture_first}/660x370c#{picture_last}"
+                        picture_aux03       = image_sum.index("?")
+                        image_uri               = image_sum[0,picture_aux03]
+
+                        #画像保存
+                        fileName = File.basename("#{nm}"+".jpg")
+                        dirName = "public/store/"
+                        filePath = dirName + fileName
+                        
+                        FileUtils.mkdir_p(dirName) unless FileTest.exist?(dirName)
+                        
+                        open(filePath, 'wb') do |output|
+                            open(image_uri) do |data|
+                                output.write(data.read)
+
+                            end
+                        end
+                        image               = "#{nm}.jpg"
+                    rescue
+                        image               = ""
+                    end
 
                     lunch               = doc.xpath('//*[@id="rstdtl-head"]/div[1]/section/div[2]/div/div/div[2]/dl[1]/dd/div/p[2]/span/a').text
                     if lunch != "-"
@@ -49,9 +81,9 @@ class FetchController < ApplicationController
                         lunch_min           = lunch_min_comma.gsub(/(\d{0,3}),(\d{3})/, '\1\2').to_i
                         lunch_max           = lunch_max_comma.gsub(/(\d{0,3}),(\d{3})/, '\1\2').to_i
                         #gsubを使用してカンマを決して.to_iで数字に変化
-                        insert_feed(nm, name_hurigana, smoking,prefecture,city,city_street,genre,business_hours,holi,lunch_min,lunch_max,dinner_min,dinner_max)
+                        insert_feed(nm, name_hurigana, smoking,prefecture,city,city_street,genre,business_hours,holi,lunch_min,lunch_max,dinner_min,dinner_max,image)
                     else
-                        insert_feed(nm, name_hurigana, smoking,prefecture,city,city_street,genre,business_hours,holi,lunch_min,lunch_max,dinner_min,dinner_max)
+                        insert_feed(nm, name_hurigana, smoking,prefecture,city,city_street,genre,business_hours,holi,lunch_min,lunch_max,dinner_min,dinner_max,image)
                     end
                 end
                 sleep 1
@@ -63,7 +95,7 @@ class FetchController < ApplicationController
 end
     
     private
-    def insert_feed(nm, name_hurigana, smoking,prefecture,city,city_street,genre,business_hours,holi,lunch_min,lunch_max,dinner_min,dinner_max)
+    def insert_feed(nm, name_hurigana, smoking,prefecture,city,city_street,genre,business_hours,holi,lunch_min,lunch_max,dinner_min,dinner_max,image)
         store = Store.new(
             :name             => nm,
             :name_hurigana    => name_hurigana,
@@ -78,6 +110,7 @@ end
             :lunch_max            => lunch_max,
             :dinner_min           => dinner_min,
             :dinner_max           => dinner_max,
+            :image                => image,
             )
         store.save
     end
