@@ -7,7 +7,11 @@
     </div>
     <div class="detail_bottom">
         <div class="detail_bottom_img">
-            <%= image_tag('noimage.jpg') %>
+            <% begin %>
+                <img src="<%= "/store/#{@stores.image}" %>">
+            <% rescue %>
+                <%= image_tag('noimage.jpg') %>
+            <% end %>        
         </div>
         <dic class="detail_bottom_table">
             <table>
@@ -37,7 +41,7 @@
         <div class="review_user">
             <%= image_tag('noimage.jpg') %>
             <% c = review.user_id %>
-            <%= @user_review["#{c}".to_i]['name'] %>
+            <%= @user_review["#{c}".to_i-1]['name'] %>
         </div>
             <div class="review_content">
                 <div class="review_content_text">

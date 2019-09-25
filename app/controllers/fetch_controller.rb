@@ -7,7 +7,7 @@ class FetchController < ApplicationController
 
     def index
 
-        (26020800..26020800).each do |id|
+        (26032875..26032975).each do |id|
             begin
             uri = "https://tabelog.com/kyoto/A2601/A260101/#{id}"
                 doc = Nokogiri::HTML(open(uri),nil,"utf-8")
@@ -44,13 +44,14 @@ class FetchController < ApplicationController
                         mini_picture        = doc.xpath('//*[@id="column-main"]/div[1]/div[2]/ul/li[1]/a/img').attribute('src').value
                     
                         mini_picture != ""
-                        picture_aux01       = mini_picture.index("e/")
+                        picture_aux01       = mini_picture.index("m/")
                         picture_aux02       = mini_picture.index("/restaurant/")
                         picture_first       = mini_picture[0,picture_aux01+1]
                         picture_last        = mini_picture[picture_aux02,99]
-                        image_sum           = "#{picture_first}/660x370c#{picture_last}"
+                        image_sum           = "#{picture_first}#{picture_last}"
                         picture_aux03       = image_sum.index("?")
                         image_uri               = image_sum[0,picture_aux03]
+
 
                         #画像保存
                         fileName = File.basename("#{nm}"+".jpg")

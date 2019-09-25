@@ -13,7 +13,11 @@
             </h3>
             <div class="item_list01_center">
                 <div class="item_list01_center_img">
-                    <%= image_tag('noimage.jpg') %>
+                    <% begin%>
+                        <img src="<%= "/store/#{store.image}" %>">
+                    <% rescue %>
+                        <%= image_tag('noimage.jpg') %>
+                    <% end %>
                 </div>
                 <div class="item_list01_center_text">
                     <p>
