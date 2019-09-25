@@ -6,7 +6,7 @@ class FetchController < ApplicationController
 
     def index
 
-        (26032870..26032910).each do |id|
+        (26032875..26032875).each do |id|
             begin
             uri = "https://tabelog.com/kyoto/A2601/A260101/#{id}"
                 doc = Nokogiri::HTML(open(uri),nil,"utf-8")
@@ -38,6 +38,9 @@ class FetchController < ApplicationController
                     dinner_max          = dinner_max_comma.gsub(/(\d{0,3}),(\d{3})/, '\1\2').to_i
                     #gsubを使用してカンマを決して.to_iで数字に変化
 
+                    image               = doc.xpath('//*[@id="column-main"]/div[1]/div[1]/div/div[1]/ul/li[6]/imgalt').text
+
+                    
                     lunch               = doc.xpath('//*[@id="rstdtl-head"]/div[1]/section/div[2]/div/div/div[2]/dl[1]/dd/div/p[2]/span/a').text
                     if lunch != "-"
                         lunch_aux01         = lunch.index("￥")
@@ -49,9 +52,9 @@ class FetchController < ApplicationController
                         lunch_min           = lunch_min_comma.gsub(/(\d{0,3}),(\d{3})/, '\1\2').to_i
                         lunch_max           = lunch_max_comma.gsub(/(\d{0,3}),(\d{3})/, '\1\2').to_i
                         #gsubを使用してカンマを決して.to_iで数字に変化
-                        insert_feed(nm, name_hurigana, smoking,prefecture,city,city_street,genre,business_hours,holi,lunch_min,lunch_max,dinner_min,dinner_max)
+                        insert_feed(nm, name_hurigana, smoking,prefecture,city,city_street,genre,business_hours,holi,lunch_min,lunch_max,dinner_min,dinner_max,image)
                     else
-                        insert_feed(nm, name_hurigana, smoking,prefecture,city,city_street,genre,business_hours,holi,lunch_min,lunch_max,dinner_min,dinner_max)
+                        insert_feed(nm, name_hurigana, smoking,prefecture,city,city_street,genre,business_hours,holi,lunch_min,lunch_max,dinner_min,dinner_max,image)
                     end
                 end
                 sleep 1
@@ -63,7 +66,7 @@ class FetchController < ApplicationController
 end
     
     private
-    def insert_feed(nm, name_hurigana, smoking,prefecture,city,city_street,genre,business_hours,holi,lunch_min,lunch_max,dinner_min,dinner_max)
+    def insert_feed(nm, name_hurigana, smoking,prefecture,city,city_street,genre,business_hours,holi,lunch_min,lunch_max,dinner_min,dinner_max,image)
         store = Store.new(
             :name             => nm,
             :name_hurigana    => name_hurigana,
@@ -78,6 +81,7 @@ end
             :lunch_max            => lunch_max,
             :dinner_min           => dinner_min,
             :dinner_max           => dinner_max,
+            :image                => image,
             )
         store.save
     end

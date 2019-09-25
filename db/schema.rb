@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_22_081602) do
+ActiveRecord::Schema.define(version: 2019_09_25_102140) do
 
   create_table "prefectures", force: :cascade do |t|
     t.integer "prefcode"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2019_09_22_081602) do
     t.integer "lunch_max"
     t.integer "dinner_min"
     t.integer "dinner_max"
+    t.string "image"
   end
 
   create_table "users", force: :cascade do |t|
