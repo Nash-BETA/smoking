@@ -4,7 +4,7 @@ require 'Fileutils'
 
 uri = "https://tblg.k-img.com/resize/660x370c/restaurant/images/Rvw/114600/114600340.jpg"
 
-fileName = File.basename(uri)
+fileName = File.basename(uri.jpg)
 dirName = "public/store/"
 filePath = dirName + fileName
 

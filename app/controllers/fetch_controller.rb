@@ -3,6 +3,7 @@ class FetchController < ApplicationController
     require 'nokogiri'
     require 'open-uri'
     require 'kconv'    
+    require 'Fileutils'
 
     def index
 
@@ -28,19 +29,37 @@ class FetchController < ApplicationController
                     holiday             = doc.xpath('//*[@id="short-comment"]').text
                     holi                = holiday.strip
                     dinner              = doc.xpath('//*[@id="rstdtl-head"]/div[1]/section/div[2]/div/div/div[2]/dl[1]/dd/div/p[1]/span/a').text
+                    #.indexを使用することで指定した文字の順番を出せる
                     dinner_aux01        = dinner.index("￥")
                     dinner_aux02        = dinner.index("～￥")
-                    #.indexを使用することで指定した文字の順番を出せる
+                    #カンマが付いたままなので数字にできない
                     dinner_min_comma    = dinner[dinner_aux01+1,dinner_aux02-1]
                     dinner_max_comma    = dinner[dinner_aux02+2,9]
-                    #カンマが付いたままなので数字にできない
+                    #gsubを使用してカンマを決して.to_iで数字に変化
                     dinner_min          = dinner_min_comma.gsub(/(\d{0,3}),(\d{3})/, '\1\2').to_i
                     dinner_max          = dinner_max_comma.gsub(/(\d{0,3}),(\d{3})/, '\1\2').to_i
-                    #gsubを使用してカンマを決して.to_iで数字に変化
 
+                    #画像取得用（jsでスライダーを使われていてスクレイピング上手く回らないので、小さい画像のURL取得してURLを加工する）
                     mini_picture        = doc.xpath('//*[@id="column-main"]/div[1]/div[2]/ul/li[1]/a/img').attribute('src').value
                     picture_aux         = mini_picture.index("?")
                     image               = mini_picture[0,picture_aux-1]
+                    
+                    #画像保存
+                    image_uri = "https://tblg.k-img.com/resize/660x370c/restaurant/images/Rvw/114600/114600340.jpg"
+                    fileName = File.basename("#{nm}"+".jpg")
+                    dirName = "public/store/"
+                    filePath = dirName + fileName
+                    
+                    FileUtils.mkdir_p(dirName) unless FileTest.exist?(dirName)
+                    
+                    open(filePath, 'wb') do |output|
+                        open(image_uri) do |data|
+                            output.write(data.read)
+                        end
+                    end
+                    
+
+
 
                     lunch               = doc.xpath('//*[@id="rstdtl-head"]/div[1]/section/div[2]/div/div/div[2]/dl[1]/dd/div/p[2]/span/a').text
                     if lunch != "-"
