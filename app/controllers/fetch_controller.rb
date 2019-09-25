@@ -38,9 +38,10 @@ class FetchController < ApplicationController
                     dinner_max          = dinner_max_comma.gsub(/(\d{0,3}),(\d{3})/, '\1\2').to_i
                     #gsubを使用してカンマを決して.to_iで数字に変化
 
-                    image               = doc.xpath('//*[@id="column-main"]/div[1]/div[1]/div/div[1]/ul/li[6]/imgalt').text
+                    mini_picture        = doc.xpath('//*[@id="column-main"]/div[1]/div[2]/ul/li[1]/a/img').attribute('src').value
+                    picture_aux         = mini_picture.index("?")
+                    image               = mini_picture[0,picture_aux-1]
 
-                    
                     lunch               = doc.xpath('//*[@id="rstdtl-head"]/div[1]/section/div[2]/div/div/div[2]/dl[1]/dd/div/p[2]/span/a').text
                     if lunch != "-"
                         lunch_aux01         = lunch.index("￥")
