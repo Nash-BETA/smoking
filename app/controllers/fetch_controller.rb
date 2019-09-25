@@ -7,7 +7,7 @@ class FetchController < ApplicationController
 
     def index
 
-        (26032875..26032875).each do |id|
+        (26020800..26020800).each do |id|
             begin
             uri = "https://tabelog.com/kyoto/A2601/A260101/#{id}"
                 doc = Nokogiri::HTML(open(uri),nil,"utf-8")
@@ -38,30 +38,37 @@ class FetchController < ApplicationController
                     #gsubを使用してカンマを決して.to_iで数字に変化
                     dinner_min          = dinner_min_comma.gsub(/(\d{0,3}),(\d{3})/, '\1\2').to_i
                     dinner_max          = dinner_max_comma.gsub(/(\d{0,3}),(\d{3})/, '\1\2').to_i
-                    image               = "#{nm}.jpg"
-                    #画像取得用（jsでスライダーを使われていてスクレイピング上手く回らないので、小さい画像のURL取得してURLを加工する）
-                    mini_picture        = doc.xpath('//*[@id="column-main"]/div[1]/div[2]/ul/li[1]/a/img').attribute('src').value
-                    picture_aux01       = mini_picture.index("e/")
-                    picture_aux02       = mini_picture.index("/restaurant/")
-                    picture_first       = mini_picture[0,picture_aux01+1]
-                    picture_last        = mini_picture[picture_aux02,99]
-                    image_sum           = "#{picture_first}/660x370c#{picture_last}"
-                    picture_aux03       = image_sum.index("?")
-                    image_uri               = image_sum[0,picture_aux03]
 
-                    #画像保存
-                    fileName = File.basename("#{nm}"+".jpg")
-                    dirName = "public/store/"
-                    filePath = dirName + fileName
+                    #画像取得用（jsでスライダーを使われていてスクレイピング上手く回らないので、小さい画像のURL取得してURLを加工する）
+                    begin
+                        mini_picture        = doc.xpath('//*[@id="column-main"]/div[1]/div[2]/ul/li[1]/a/img').attribute('src').value
                     
-                    FileUtils.mkdir_p(dirName) unless FileTest.exist?(dirName)
-                    
-                    open(filePath, 'wb') do |output|
-                        open(image_uri) do |data|
-                            output.write(data.read)
+                        mini_picture != ""
+                        picture_aux01       = mini_picture.index("e/")
+                        picture_aux02       = mini_picture.index("/restaurant/")
+                        picture_first       = mini_picture[0,picture_aux01+1]
+                        picture_last        = mini_picture[picture_aux02,99]
+                        image_sum           = "#{picture_first}/660x370c#{picture_last}"
+                        picture_aux03       = image_sum.index("?")
+                        image_uri               = image_sum[0,picture_aux03]
+
+                        #画像保存
+                        fileName = File.basename("#{nm}"+".jpg")
+                        dirName = "public/store/"
+                        filePath = dirName + fileName
+                        
+                        FileUtils.mkdir_p(dirName) unless FileTest.exist?(dirName)
+                        
+                        open(filePath, 'wb') do |output|
+                            open(image_uri) do |data|
+                                output.write(data.read)
+
+                            end
                         end
+                        image               = "#{nm}.jpg"
+                    rescue
+                        image               = ""
                     end
-                    
 
                     lunch               = doc.xpath('//*[@id="rstdtl-head"]/div[1]/section/div[2]/div/div/div[2]/dl[1]/dd/div/p[2]/span/a').text
                     if lunch != "-"
