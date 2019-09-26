@@ -14,8 +14,23 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
+  end
 
-end
+  def edit
+    @users = User.find(params[:id])
+    render :layout => 'users'
+  end
+    
+  def update
+    @users = User.find(params[:id])
+    if @users.update_attributes(user_params)
+      redirect_to @users
+      flash[:success] = "プロフィールを更新しました"
+    else
+      render'show'
+    end
+  end
+
 
 private
 
