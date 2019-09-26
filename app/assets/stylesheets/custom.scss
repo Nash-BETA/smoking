@@ -118,19 +118,27 @@ height: 240px;
   z-index: 100;
 }
 
-.header a{
+.header_left {
   float: left;
-  font-size: 30px;
   padding-top: 10px;
 }
 
-.header p{
+
+.header_left a{
+  font-size: 30px;
+}
+
+.header_right {
   float: right;
-  font-size: 22px;
-  padding-top: 20px;
+  padding-top: 10px;
   padding-right: 20px;
   margin: 0 0 0 0;
 }
+
+.header_right p{
+font-size: 22px;
+}
+
 
 /* detailページの枠　*/
 .detail {
