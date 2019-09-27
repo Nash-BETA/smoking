@@ -71,6 +71,8 @@ ruby,railsの勉強の為のポータルサイト
 * 口コミ投稿（画像投稿、テキスト投稿、ユーザーID、storeID取得）
 * robots.txtの作成（もともとpublicにあった）
 * sitemap.xml（.html.erbを.xml.erbにするとxmlで出てくる）
+* ユーザー編集画面の作成
+* ユーザーの画像設定
 
 
 ## Qiitaにまとめるもの
