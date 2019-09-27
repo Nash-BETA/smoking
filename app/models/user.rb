@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    mount_uploader :image, ImageUploader
     has_many :reviews
 
     attr_accessor :remember_token

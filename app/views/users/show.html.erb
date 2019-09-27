@@ -7,6 +7,18 @@
                 
                 <div class="profile_left">
 
+                    <div class="icon">
+                        <div class="icon_img">
+                            <% if @users.image? %>
+                                <img src="<%= "#{@users.image}" %>">
+                            <% else %>
+                                <%= image_tag "default.jpg" %>
+                            <% end %>
+                        </div>  
+                        <%= f.label :画像編集 %>
+                        <%= f.file_field :image, class: "image"  %>
+                    </div>
+                    
                     <%= f.label :name %>
                     <%= f.text_field :name, class: 'form-control' %>              
 
@@ -18,12 +30,6 @@
 
                     <%= f.label :パスワード確認 %>
                     <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-                    <div class="icon">
-                        <img src="<%= "/user/#{@users.image}" %>">
-                    </div>
-                    <%= f.label :画像編集 %>
-                    <%= f.file_field :image, class: "image"  %>
 
 
                 </div>

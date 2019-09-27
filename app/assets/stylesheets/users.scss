@@ -11,7 +11,34 @@
 }
 
 .icon {
-    margin-top: 2px;
-    padding-right: 5px;
-    width: 100px;
+    position: relative;
+    margin: auto;
+}
+
+.icon_img {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+}
+
+.icon_img img{
+    position: absolute;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.icon_form {
+    position: absolute;
+    height: auto;
+    width: auto;
+    margin: auto;
+
 }
