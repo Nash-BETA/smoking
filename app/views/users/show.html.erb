@@ -18,14 +18,14 @@
 
                     <%= f.label :パスワード確認 %>
                     <%= f.password_field :password_confirmation, class: 'form-control' %>
-                </div>
 
-                <div class="profile_right">
-                
-                    <div class="gravatar_edit">
-
-
+                    <div class="icon">
+                        <img src="<%= "#{@users.id}"+".jpg" %>">
                     </div>
+                    <%= f.label :画像編集 %>
+                    <%= f.file_field :image, class: "image"  %>
+
+
                 </div>
                 <%= f.submit "更新する", class: "btn btn-primary" %>
             <% end %>
