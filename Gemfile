@@ -6,6 +6,7 @@ gem 'bootstrap-sass', '3.4.1'
 gem 'bcrypt',         '3.1.13'
 gem 'kaminari'
 gem 'carrierwave'
+gem 'gravtastic'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
