@@ -20,7 +20,7 @@
                     <%= f.password_field :password_confirmation, class: 'form-control' %>
 
                     <div class="icon">
-                        <img src="<%= "#{@users.id}"+".jpg" %>">
+                        <img src="<%= "/user/#{@users.image}" %>">
                     </div>
                     <%= f.label :画像編集 %>
                     <%= f.file_field :image, class: "image"  %>
