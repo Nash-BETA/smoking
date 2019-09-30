@@ -13,11 +13,11 @@
 * 口コミ投稿（画像）
 * robots.txt
 * sitemap.xml
+* テストコード作成
+
 
 【未実装】
 * お気に入り
-* テストコード作成
-* 自動デプロイ（GitLab CI）
 
 ## 使用技術
 
@@ -73,6 +73,7 @@ ruby,railsの勉強の為のポータルサイト
 * sitemap.xml（.html.erbを.xml.erbにするとxmlで出てくる）
 * ユーザー編集画面の作成
 * ユーザーの画像設定
+* Rspec導入ー勉強中
 
 
 ## Qiitaにまとめるもの
@@ -104,13 +105,17 @@ https://qiita.com/Nash-BETA/items/4c9e43b7ab12a0b45994
 
 https://qiita.com/Nash-BETA/items/8dd34684b65f3c29861a
 
+⇨数が増えてきたため追記は終了
+
+https://qiita.com/Nash-BETA
+
 ## ポートフォリオとして利用するためにやっておくタスクリスト（9/15記載）
 * ユーザー機能 (済)
 * 口コミ機能 (済)
 * 口コミに画像挿入 (済)
 * お気に入り機能 ()
 * 一覧ページのページネーション (済)
-* テストコードの作成
+* テストコードの作成 (途中)
 
 ### 参考元 http://ur0.work/YxAe
 * 記事一覧表示機能 
