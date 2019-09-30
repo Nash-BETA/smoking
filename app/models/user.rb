@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     mount_uploader :image, ImageUploader
     has_many :reviews
+    has_many :favorite
 
     attr_accessor :remember_token
     before_save { email.downcase! }
