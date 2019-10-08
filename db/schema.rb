@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_30_074252) do
+ActiveRecord::Schema.define(version: 2019_10_08_153219) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "store_id"
-    t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["store_id"], name: "index_favorites_on_store_id"
+    t.index ["user_id", "store_id"], name: "index_favorites_on_user_id_and_store_id", unique: true
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
@@ -40,16 +40,6 @@ ActiveRecord::Schema.define(version: 2019_09_30_074252) do
     t.index ["store_id"], name: "index_reviews_on_store_id"
     t.index ["user_id", "store_id"], name: "index_reviews_on_user_id_and_store_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
-  end
-
-  create_table "reviws", force: :cascade do |t|
-    t.text "content"
-    t.integer "user_id"
-    t.integer "store_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["store_id"], name: "index_reviws_on_store_id"
-    t.index ["user_id"], name: "index_reviws_on_user_id"
   end
 
   create_table "stores", force: :cascade do |t|
