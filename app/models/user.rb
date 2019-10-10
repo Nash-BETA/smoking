@@ -53,5 +53,9 @@ class User < ApplicationRecord
         favorite.destroy if favorite
     end
 
+    def  favpost?(micropost)
+        self.favposts.include?(micropost)
+    end
+
 
 end
