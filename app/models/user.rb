@@ -53,7 +53,7 @@ class User < ApplicationRecord
         favorite.destroy if favorite
     end
     
-    #お気にり登録判定
+    #登録判定
     def  favpost(store)
         self.fav_posts.include?(store)
     end
