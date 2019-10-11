@@ -1,8 +1,12 @@
 class User < ApplicationRecord
     mount_uploader :image, ImageUploader
     has_many :reviews
-    has_many :favorite
-    has_many :stores, through: :favorites
+
+    #お気にり入りで追加
+    has_many :stores
+    has_many :favorites
+    has_many :fav_posts, through: :favorites, source: :store
+
 
     attr_accessor :remember_token
     before_save { email.downcase! }
@@ -36,5 +40,21 @@ class User < ApplicationRecord
 
     def forget
         update_attribute(:remember_digest, nil)
+    end
+
+    #お気に入り追加
+    def like(store)
+        favorites.find_or_create_by(store_id: store.id)
+    end
+
+    #お気に入り削除
+    def unlike(store)
+        favorite = Favorite.find_by(store_id: store.id)
+        favorite.destroy if favorite
+    end
+    
+    #お気にり登録判定
+    def  favpost(store)
+        self.fav_posts.include?(store)
     end
 end
