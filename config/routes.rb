@@ -27,4 +27,7 @@ Rails.application.routes.draw do
   #コントローラーを動かす。（クローリングでfeetchとprefectureで使用）
   get ':controller(/:action(/:id(.:format)))'
 
+  resources :favorites, only: [:create, :destroy]
+  
+
 end

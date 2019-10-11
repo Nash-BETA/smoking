@@ -5,7 +5,7 @@ class User < ApplicationRecord
     #お気にり入りで追加
     has_many :stores
     has_many :favorites
-    has_many :fav_posts, through: :favorites, source: :stores
+    has_many :fav_posts, through: :favorites, source: :store
 
 
     attr_accessor :remember_token
@@ -52,5 +52,9 @@ class User < ApplicationRecord
         favorite = Favorite.find_by(store_id: store.id)
         favorite.destroy if favorite
     end
-
+    
+    #お気にり登録判定
+    def  favpost(store)
+        self.fav_posts.include?(store)
+    end
 end
