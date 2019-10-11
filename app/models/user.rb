@@ -44,7 +44,7 @@ class User < ApplicationRecord
 
     #お気に入り追加
     def like(store)
-        Favorite.find_or_create_by(store_id: store.id)
+        favorites.find_or_create_by(store_id: store.id)
     end
 
     #お気に入り削除
@@ -52,10 +52,5 @@ class User < ApplicationRecord
         favorite = Favorite.find_by(store_id: store.id)
         favorite.destroy if favorite
     end
-
-    def  favpost?(micropost)
-        self.favposts.include?(micropost)
-    end
-
 
 end
