@@ -1,5 +1,5 @@
 require 'open-uri'
-require 'Fileutils'
+require 'fileutils'
 
 
 uri = "https://tblg.k-img.com/resize/660x370c/restaurant/images/Rvw/114600/114600340.jpg"
@@ -7,7 +7,6 @@ uri = "https://tblg.k-img.com/resize/660x370c/restaurant/images/Rvw/114600/11460
 fileName = File.basename(uri.jpg)
 dirName = "public/store/"
 filePath = dirName + fileName
-
 FileUtils.mkdir_p(dirName) unless FileTest.exist?(dirName)
 
 open(filePath, 'wb') do |output|

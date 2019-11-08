@@ -3,7 +3,7 @@ class FetchController < ApplicationController
     require 'nokogiri'
     require 'open-uri'
     require 'kconv'    
-    require 'Fileutils'
+    require 'fileutils'
 
     def index
 
