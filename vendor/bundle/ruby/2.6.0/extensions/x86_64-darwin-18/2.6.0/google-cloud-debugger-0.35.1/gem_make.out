@@ -1,0 +1,17 @@
+current directory: /Users/nns/Documents/GitHub/smoking/vendor/bundle/ruby/2.6.0/gems/google-cloud-debugger-0.35.1/ext/google/cloud/debugger/debugger_c
+/Users/nns/.rbenv/versions/2.6.5/bin/ruby -I /Users/nns/.rbenv/versions/2.6.5/lib/ruby/2.6.0 -r ./siteconf20191108-85031-xryx25.rb extconf.rb
+creating Makefile
+
+current directory: /Users/nns/Documents/GitHub/smoking/vendor/bundle/ruby/2.6.0/gems/google-cloud-debugger-0.35.1/ext/google/cloud/debugger/debugger_c
+make "DESTDIR=" clean
+
+current directory: /Users/nns/Documents/GitHub/smoking/vendor/bundle/ruby/2.6.0/gems/google-cloud-debugger-0.35.1/ext/google/cloud/debugger/debugger_c
+make "DESTDIR="
+compiling debugger.c
+compiling evaluator.c
+compiling tracer.c
+linking shared-object google/cloud/debugger/debugger_c.bundle
+
+current directory: /Users/nns/Documents/GitHub/smoking/vendor/bundle/ruby/2.6.0/gems/google-cloud-debugger-0.35.1/ext/google/cloud/debugger/debugger_c
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debugger_c.bundle ./.gem.20191108-85031-v7fjbf/google/cloud/debugger
