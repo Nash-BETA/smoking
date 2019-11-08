@@ -28,5 +28,4 @@ Rails.application.routes.draw do
   get ':controller(/:action(/:id(.:format)))'
 
   resources :favorites, only: [:create, :destroy]
-
 end

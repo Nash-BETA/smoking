@@ -72,6 +72,7 @@
         </div>
     </div>
 <% end %>
-
-<% store = @sotores %>
-<%= render 'favorites/like_button', store: store %>
+<div>
+    <% store = @stores %>
+    <%= render 'favorites/like_button', store: store %>
+</div>
