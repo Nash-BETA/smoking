@@ -3,7 +3,7 @@
                 <h1>
                     <%= @stores.name %>
                     <%= @stores.name_hurigana %>
-                    </h1>
+                </h1>
     </div>
     <div class="detail_bottom">
         <div class="detail_bottom_img">
@@ -72,3 +72,7 @@
         </div>
     </div>
 <% end %>
+<div>
+    <% store = @stores %>
+    <%= render 'favorites/like_button', store: store %>
+</div>

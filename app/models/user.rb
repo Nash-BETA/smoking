@@ -54,7 +54,7 @@ class User < ApplicationRecord
     end
     
     #登録判定
-    def  favpost(store)
+    def  favpost?(store)
         self.fav_posts.include?(store)
     end
 end
