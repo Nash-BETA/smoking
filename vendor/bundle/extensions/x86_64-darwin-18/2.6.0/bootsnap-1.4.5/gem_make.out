@@ -1,0 +1,15 @@
+current directory: /Users/nns/Documents/GitHub/smoking/vendor/bundle/gems/bootsnap-1.4.5/ext/bootsnap
+/Users/nns/.rbenv/versions/2.6.5/bin/ruby -I /Users/nns/.rbenv/versions/2.6.5/lib/ruby/2.6.0 -r ./siteconf20191108-19588-ko30om.rb extconf.rb
+creating Makefile
+
+current directory: /Users/nns/Documents/GitHub/smoking/vendor/bundle/gems/bootsnap-1.4.5/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/nns/Documents/GitHub/smoking/vendor/bundle/gems/bootsnap-1.4.5/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/nns/Documents/GitHub/smoking/vendor/bundle/gems/bootsnap-1.4.5/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20191108-19588-csxgfb/bootsnap
