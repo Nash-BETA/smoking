@@ -13,4 +13,5 @@ class StoreController < ApplicationController
     @user_review    = User.all
 
   end
+
 end
