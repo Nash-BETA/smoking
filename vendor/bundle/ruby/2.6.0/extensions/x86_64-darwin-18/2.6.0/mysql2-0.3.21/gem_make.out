@@ -1,0 +1,70 @@
+current directory: /Users/nns/Documents/GitHub/smoking/vendor/bundle/ruby/2.6.0/gems/mysql2-0.3.21/ext/mysql2
+/Users/nns/.rbenv/versions/2.6.5/bin/ruby -I /Users/nns/.rbenv/versions/2.6.5/lib/ruby/2.6.0 -r ./siteconf20191127-92498-jxe9xu.rb extconf.rb --with-cppflags\=-I/usr/local/opt/openssl/include
+checking for ruby/thread.h... yes
+checking for rb_thread_call_without_gvl() in ruby/thread.h... yes
+checking for rb_thread_blocking_region()... no
+checking for rb_wait_for_single_fd()... yes
+checking for rb_hash_dup()... yes
+checking for rb_intern3()... yes
+-----
+Using mysql_config at /usr/local/bin/mysql_config
+-----
+checking for mysql.h... yes
+checking for errmsg.h... yes
+checking for mysqld_error.h... yes
+-----
+Don't know how to set rpath on your system, if MySQL libraries are not in path mysql2 may not load
+-----
+-----
+Setting libpath to /usr/local/Cellar/mysql/8.0.16/lib
+-----
+creating Makefile
+
+current directory: /Users/nns/Documents/GitHub/smoking/vendor/bundle/ruby/2.6.0/gems/mysql2-0.3.21/ext/mysql2
+make "DESTDIR=" clean
+
+current directory: /Users/nns/Documents/GitHub/smoking/vendor/bundle/ruby/2.6.0/gems/mysql2-0.3.21/ext/mysql2
+make "DESTDIR="
+compiling client.c
+client.c:439:3: error: use of undeclared identifier 'my_bool'
+  my_bool res = mysql_read_query_result(client);
+  ^
+client.c:441:19: error: use of undeclared identifier 'res'
+  return (void *)(res == 0 ? Qtrue : Qfalse);
+                  ^
+client.c:762:3: error: use of undeclared identifier 'my_bool'
+  my_bool boolval;
+  ^
+client.c:793:7: error: use of undeclared identifier 'boolval'
+      boolval = (value == Qfalse ? 0 : 1);
+      ^
+client.c:794:17: error: use of undeclared identifier 'boolval'
+      retval = &boolval;
+                ^
+client.c:797:10: error: use of undeclared identifier 'MYSQL_SECURE_AUTH'; did you mean 'MYSQL_DEFAULT_AUTH'?
+    case MYSQL_SECURE_AUTH:
+         ^~~~~~~~~~~~~~~~~
+         MYSQL_DEFAULT_AUTH
+/usr/local/Cellar/mysql/8.0.16/include/mysql/mysql.h:188:3: note: 'MYSQL_DEFAULT_AUTH' declared here
+  MYSQL_DEFAULT_AUTH,
+  ^
+client.c:798:7: error: use of undeclared identifier 'boolval'
+      boolval = (value == Qfalse ? 0 : 1);
+      ^
+client.c:799:17: error: use of undeclared identifier 'boolval'
+      retval = &boolval;
+                ^
+client.c:830:38: error: use of undeclared identifier 'boolval'
+        wrapper->reconnect_enabled = boolval;
+                                     ^
+client.c:1185:38: error: use of undeclared identifier 'MYSQL_SECURE_AUTH'; did you mean 'MYSQL_DEFAULT_AUTH'?
+  return _mysql_client_options(self, MYSQL_SECURE_AUTH, value);
+                                     ^~~~~~~~~~~~~~~~~
+                                     MYSQL_DEFAULT_AUTH
+/usr/local/Cellar/mysql/8.0.16/include/mysql/mysql.h:188:3: note: 'MYSQL_DEFAULT_AUTH' declared here
+  MYSQL_DEFAULT_AUTH,
+  ^
+10 errors generated.
+make: *** [client.o] Error 1
+
+make failed, exit code 2
