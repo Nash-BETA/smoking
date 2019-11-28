@@ -9,7 +9,7 @@ class PrefectureController < ApplicationController
         pref_name_date = Prefecture.find_by(prefcode: "#{pref_code}")
         pref_name      = pref_name_date.prefname
         s_pref_date    = Store.where(prefecture: "#{pref_name}")
-        @stores1        = s_pref_date
+        @stores        = s_pref_date
         @stores        = s_pref_date.page(params[:page]).per(5)
 
     end
