@@ -1,2 +1,38 @@
 <h1><%= @prefectures.prefname %>のお店一覧</h1>
 
+
+<%= @stores.total_count %>件中<%= @stores.offset_value + 1 %>
+〜<%= @stores.offset_value + @stores.length %>件を表示しています。
+
+
+<% @stores.each do |store| %>
+
+        <div class="item_list01">
+            <h3>
+                <%=link_to store.name , detail_path(store.id) %> 
+            </h3>
+            <div class="item_list01_center">
+                <div class="item_list01_center_img">
+                    <% begin%>
+                        <img src="<%= "/store/#{store.image}" %>">
+                    <% rescue %>
+                        <%= image_tag('noimage.jpg') %>
+                    <% end %>
+                </div>
+                <div class="item_list01_center_text">
+                    <p>
+                        喫煙：<%= store.smoking%>
+                    </p>
+                    <p>
+                        料理ジャンル：<%= store.genre%>
+                    </p>
+                    <span>
+                        昼<%= store.lunch_min%>〜<%= store.lunch_max%>円 夜<%= store.dinner_min%>〜<%= store.dinner_max%>円
+                    </span>
+                </div>
+            </div>
+        </div>
+
+<% end %>
+
+<%= paginate @stores %>
