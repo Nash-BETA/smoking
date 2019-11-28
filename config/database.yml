@@ -35,3 +35,4 @@ production:
   password: <%= ENV['ef487c35'] %>
 
 #  database: db/production.sqlite3
+
