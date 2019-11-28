@@ -1,9 +1,6 @@
 <h1><%= @prefectures.prefname %>のお店一覧</h1>
 
 
-<%= @stores.total_count %>件中<%= @stores.offset_value + 1 %>
-〜<%= @stores.offset_value + @stores.length %>件を表示しています。
-
 
 <% @stores.each do |store| %>
 
