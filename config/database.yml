@@ -30,5 +30,8 @@ test:
 
 production:
   <<: *default
+    database: <%= ENV['heroku_64ac44b0f3e6e64?reconnect'] %> 
+    username: <%= ENV['b1879f85fba992'] %>
+    password: <%= ENV['ef487c35'] %>
 
 #  database: db/production.sqlite3
