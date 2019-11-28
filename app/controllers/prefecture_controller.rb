@@ -5,7 +5,7 @@ class PrefectureController < ApplicationController
         @prefectures = Prefecture.find(params[:prefcode])
 
 
-        pref_code      = pref_path[6,7].to_i
+        pref_code      = pref_path[6,8].to_i
         pref_name_date = Prefecture.find_by(prefcode: "#{pref_code}")
         pref_name      = pref_name_date.prefname
         s_pref_date    = Store.where(prefecture: "#{pref_name}")
